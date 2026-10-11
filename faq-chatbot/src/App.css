@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eef2f7;
+  font-family: Arial, sans-serif;
+  color: #202124;
+}
+
+.chat-shell {
+  width: 100%;
+  max-width: 900px;
+  height: min(800px, calc(100vh - 48px));
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #e0e4eb;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(30, 50, 80, 0.10);
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bot-logo {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: #e7f0ff;
+  border-radius: 14px;
+  font-size: 25px;
+}
+
+.brand h1 {
+  margin: 0 0 5px;
+  font-size: 20px;
+}
+
+.brand p {
+  margin: 0;
+  color: #697386;
+  font-size: 13px;
+}
+
+.new-chat-btn {
+  padding: 10px 13px;
+  border: 1px solid #dce2eb;
+  background: white;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.new-chat-btn:hover {
+  background: #f3f6fb;
+}
+
+.chat-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 28px 24px;
+}
+
+.welcome {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.welcome h2 {
+  margin-bottom: 8px;
+  font-size: 25px;
+}
+
+.welcome p {
+  color: #687386;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 90%;
+}
+
+.message-row.user {
+  align-self: flex-end;
+}
+
+.message-row.bot {
+  align-self: flex-start;
+}
+
+.message-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f2ff;
+  font-size: 18px;
+}
+
+.user-avatar {
+  background: #e9e7ff;
+}
+
+.message-bubble {
+  padding: 12px 15px;
+  border-radius: 14px;
+  background: #f1f4f8;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.user .message-bubble {
+  background: #e5efff;
+}
+
+.sender-name {
+  display: block;
+  margin-bottom: 4px;
+  color: #5e6a7d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.message-bubble p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 26px;
+}
+
+.suggestions p {
+  flex-basis: 100%;
+  margin: 0;
+  color: #687386;
+  font-size: 13px;
+}
+
+.suggestions button {
+  padding: 10px 12px;
+  border: 1px solid #dce2eb;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+}
+
+.suggestions button:hover {
+  background: #f0f5ff;
+  border-color: #a8c7fa;
+}
+
+.chat-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e8eaf0;
+}
+
+.input-form {
+  display: flex;
+  gap: 10px;
+  padding: 7px;
+  border: 1px solid #dce2eb;
+  border-radius: 14px;
+  background: white;
+}
+
+.input-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+}
+
+.send-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 11px;
+  background: #2563eb;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background: #1d4ed8;
+}
+
+.footer-note {
+  margin: 10px 0 0;
+  color: #7a8494;
+  text-align: center;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 0;
+  }
+
+  .chat-shell {
+    height: 100vh;
+    min-height: 0;
+    border-radius: 0;
+  }
+
+  .chat-header {
+    padding: 14px;
+  }
+
+  .chat-body {
+    padding: 22px 14px;
+  }
+
+  .chat-footer {
+    padding: 12px 14px;
+  }
+
+  .welcome h2 {
+    font-size: 21px;
+  }
+
+  .message-row {
+    max-width: 100%;
+  }
+
+  .brand h1 {
+    font-size: 17px;
+  }
+
+  .new-chat-btn {
+    padding: 9px;
+    font-size: 12px;
+  }
+}
